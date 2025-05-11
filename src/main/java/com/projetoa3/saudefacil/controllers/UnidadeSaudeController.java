@@ -80,7 +80,7 @@ public class UnidadeSaudeController {
     @GetMapping("/buscar")
     public ResponseEntity<List<UnidadeSaude>> buscarPorNome(@RequestParam String nome) {
         try {
-            List<UnidadeSaude> unidades = unidadeSaudeRepository.findByNameContaining(nome);
+            List<UnidadeSaude> unidades = unidadeSaudeRepository.findByNomeContaining(nome);
 
             if (unidades.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
